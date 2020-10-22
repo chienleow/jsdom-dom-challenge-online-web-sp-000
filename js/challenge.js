@@ -21,7 +21,7 @@ const commentInput = document.querySelector("#comment-input");
 
 plus.addEventListener("click", countUp);
 minus.addEventListener("click", countDown);
-heart.addEventListener("click", addHeart);
+heart.addEventListener("click", addLike);
 
 
 commentForm.addEventListener("submit", function(e) {
@@ -48,11 +48,14 @@ function countDown() {
     }
 }
 
-function addHeart() {
+function addLike() {
     const currentCount = counter.textContent;
+    // const previousLike = document.querySelectorAll('.likes > li');
+    const previousLike = likes.children;
+    
     newLi = document.createElement('li');
-    newLi.innerText = currentCount;
-    likes.appendChild(`${newLi} has been liked ${} time );
+    newLi.innerText = `${currentCount} has been liked 1 time`
+    likes.appendChild(newLi);
 }
 
 
